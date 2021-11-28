@@ -22,7 +22,7 @@ http:{
       ventas:[],
       cantidades:[],
       cant:1,
-      font:'',
+      
 
    },
 
