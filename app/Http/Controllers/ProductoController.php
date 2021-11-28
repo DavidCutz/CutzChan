@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Especies;
+use App\Producto;
 
-class EspecieController extends Controller
+class ProductoController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return $especie=Especies::all();
+        return Producto::all();
     }
 
     /**
@@ -46,7 +46,7 @@ class EspecieController extends Controller
      */
     public function show($id)
     {
-        return $especie=Especies::find($id);
+        return Producto::find($id);
     }
 
     /**

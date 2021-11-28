@@ -14,3 +14,28 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('especies', function () {
+    return view('especies');
+});
+
+Route::get('mascotas', function () {
+    return view('mascotas');
+});
+
+Route::get('ventas', function () {
+    return view('ventas');
+});
+
+
+
+Route::apiResource('apiMascota','MascotasController');
+Route::apiResource('apiEspecie','EspeciesController');
+Route::apiResource('apiPropietario','PropietariosController');
+Route::apiResource('apiRaza','RazasController');
+
+
+Route::apiResource('apiProducto','ProductoController');
+
+
+

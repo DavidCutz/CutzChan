@@ -35,7 +35,14 @@ class MascotasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+     $mascotas=new Mascotas();
+
+     $mascota->nombre=$request->get('nombre');
+     $mascota->edad=$request->get('edad');
+     $mascota->genero=$request->get('genero');
+   
+     $mascota->save();
+
     }
 
     /**
@@ -67,10 +74,20 @@ class MascotasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
     public function update(Request $request, $id)
     {
-        //
+        $mascota=Mascotas::find($id);
+
+        $mascota->nombre=$request->get('nombre');
+        $mascota->nombre=$request->get('edad');
+        $mascota->nombre=$request->get('genero');
+
+        $mascota->update();
+
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -80,6 +97,8 @@ class MascotasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $mascotas=Mascotas::find($id);
+
+        $mascota->delete();
     }
 }
