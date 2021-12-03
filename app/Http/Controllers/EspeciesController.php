@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Especies;
 
-class EspecieController extends Controller
+class EspeciesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class EspecieController extends Controller
      */
     public function index()
     {
-        return $especie=Especies::all();
+        return $especies=Especies::all();
     }
 
     /**
@@ -80,6 +80,7 @@ class EspecieController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $especie=Especies::find($id);
+        $especie->delete();
     }
 }

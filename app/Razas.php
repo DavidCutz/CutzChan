@@ -10,7 +10,7 @@ class Razas extends Model
     protected $primaryKey='id_razas';
 
 //definir si la llave primaria es o no un numero incrementable 
-    public $incrementing=true 
+    public $incrementing=true;
 
     //activar o desactivar etiquetas de tiempo
     public $timetamps=true;

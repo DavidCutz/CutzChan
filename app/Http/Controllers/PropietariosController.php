@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Propietarios;
 
-class PropietarioController extends Controller
+class PropietariosController extends Controller
 {
     /**
      * Display a listing of the resource.

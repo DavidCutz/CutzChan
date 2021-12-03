@@ -93,11 +93,14 @@ subTotal(){
 
 }, //fin subtotal
 
+
 iva(){
    var auxIva=0;
     auxIva=this.auxSubTotal*0.16;
     return auxIva.toFixed(1);
+
 },//fin iva
+
 
 granTotal(){
   var auxTotal=0;
@@ -106,20 +109,21 @@ granTotal(){
 
 },//fin grantotal
 
+
 noArticulos(){
    var acum=0; //acum: acumulador 
 for (var i = this.ventas.length - 1; i >= 0; i--) {
-   acum=acum+this.ventas[i].cantidad;
-   return acum;
-   
+   acum=acum+this.ventas[i].cantidad; 
   }
-}//fin articulos
+  return acum;
+  
+},//fin articulos
 
 
-} //fin computed
+}, //fin computed
 
 
-})
+});
 
 
  

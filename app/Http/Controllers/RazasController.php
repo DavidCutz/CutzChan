@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Razas;
 
-class RazaController extends Controller
+class RazasController extends Controller
 {
     /**
      * Display a listing of the resource.

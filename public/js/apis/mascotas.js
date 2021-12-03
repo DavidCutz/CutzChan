@@ -1,6 +1,7 @@
 function init(){
 
 var apiMascota='http://localhost/CutzChan/public/apiMascota';
+var apiEspecie='http://localhost/CutzChan/public/apiEspecie';
 
 new Vue({
 
@@ -15,12 +16,14 @@ http:{
 	data:{
       
       mascotas:[],
+      especies:[],
 
       nombre:'',
       edad:'',
       genero:'',
       agregando:true,
       id_mascota:'',
+      id_especie:'',
 
 	},
 
@@ -28,6 +31,7 @@ http:{
     //al crearse la pagina 
 	created:function(){
         this.obtenerMascotas();
+        this.obtenerEspecies();
 	},
 
 //inicio de los metodos
@@ -39,7 +43,7 @@ http:{
 			}).catch(function(json){
                console.log(json);
 			});
-		},
+		},//fin obtener 
 
 
 
@@ -48,16 +52,20 @@ http:{
       	this.nombre='';
       	this.edad='';
       	this.genero='';
+        this.id_especie='';
       	
         $('#modalMascota').modal('show');
 
-      },
+      },//fin mostrar modal
 
 
 
     guardarMascota:function(){
     	//se contrulle el json para enviar al controlador 
-    	var mascota={nombre:this.nombre,edad:this.edad,genero:this.genero};
+    	var mascota={nombre:this.nombre,
+                  edad:this.edad,
+                  genero:this.genero,
+                  id_especie:this.id_especie};
 
 
     	//se envia los datos en json al controlador
@@ -66,6 +74,7 @@ http:{
       	this.nombre='';
       	this.edad='';
       	this.genero='';
+        this.id_especie='';
       }).catch(function(json){
       	console.log(json);
       });
@@ -73,7 +82,7 @@ http:{
 
       $('#modalMascota').modal('hide');
     	console.log(mascota);
-    },
+    },//fin guardar
 
 
 
@@ -90,7 +99,7 @@ http:{
 
      }
 
-     },
+     },//fin eliminar
 
      editandoMascota:function(){
      	this.agregando=false;
@@ -106,14 +115,15 @@ http:{
       });
 
       $('#modalMascota').modal('show');
-     },
+     },//fin editar
 
 
     actualizarMascota:function(){
     
-    var jsonMascota = {nombre:this,
-                       edad:this,
-                       genero:this
+    var jsonMascota = {nombre:this.nombre,
+                       edad:this.edad,
+                       genero:this.genero,
+                       id_especie:this.id_especie
                        };
 
     this.http.patch(apiMascota + '/' + this.id_mascota.jsonMascota).then(function(json){
@@ -123,11 +133,19 @@ http:{
 
     $('#modalMascota').modal('hide');
 
-    }
+    },//fin actualizar
+
+
+    obtenerEspecies:function(){
+      this.$http.get(apiEspecie).then(function(json){
+       this.especies=json.data;
+      })
+
+    }//fin obtener especie
 
 
 
-	} //fin de los metodos 
+	}//fin de los metodos 
 
 
 });

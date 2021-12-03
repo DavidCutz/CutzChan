@@ -81,6 +81,11 @@
  	<option value="H">H</option>
  </select>
 
+<select class="form-control" v-model="id_especie">
+	<option v-for="especie in especie" v-bine:value="especie.id_especie">@{{especie.especie}}</option>
+</select>
+
+<!--<h5>Especie elejida : @{{id_especie}}</h5>-->
 
       </div>
       <div class="modal-footer">
