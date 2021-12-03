@@ -25,6 +25,10 @@ http:{
       id_mascota:'',
       id_especie:'',
 
+      cantidad:1,
+      precio:0,
+      buscar:'',
+
 	},
 
 
@@ -147,6 +151,25 @@ http:{
 
 	}//fin de los metodos 
 
+ 
+ computed:{
+   total:function(){
+    var t=0;
+    t=this.cantidad * this. precio;
+    return t;
+
+   }//fin total
+
+
+   filtroMascotas:function(){
+      return this.mascotas.filter((mascota)=>{
+        return mascota.nombre.toLowerCase().match(this.buscar.toLowerCase().trim()) ||
+               mascota.especie.especie.toLowerCase().match(this.buscar.toLowerCase().trim())
+      });
+
+   }//fin filtro
+
+ }//fin de computed 
 
 });
  

@@ -35,7 +35,12 @@ class EspeciesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $especies=new Especie();
+
+        $especies->id_especie=19;
+        $especies->especie=$request->get('especie');
+
+        $especies->save();
     }
 
     /**
@@ -69,7 +74,12 @@ class EspeciesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $especies=Especie::find($id);
+
+        $especies->id_especie=$request->get('id_especie');
+        $especies->especie=$request->get('especie');
+
+        $especies->update();
     }
 
     /**

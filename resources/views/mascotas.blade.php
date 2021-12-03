@@ -4,6 +4,19 @@
 
 <!--inicia vue-->
 <div id="mascota">
+
+<!--<div class="row">
+	<div class="col-md-8">
+		<input type="number" placeholder="cantidad" class="form-control" v-model=" cantidad"><br>
+		<input type="number" placeholder="precio" class="form-control" v-model="precio"><br>
+
+		<h5>Total: @{{total}}</h5>
+	</div>
+</div>-->
+
+
+
+
 	<div class="row">
 		<div class="col-md-12">
 			<div class="card card-warning ">
@@ -14,6 +27,11 @@
 						<i class="fas fa-user-plus"></i>
 					</button>
 					</h1>
+
+                  <div class="col-md-6">
+		         <input type="text" placeholder="Escriba el nombre o especie de la mascota" class="form-control" v-model="buscar">
+	             </div>
+
 
 				</div>
             <div class="card-body">
@@ -30,7 +48,7 @@
          	</thead>
 
          	<tbody>
-         		<tr v-for="mascota in mascotas">
+         		<tr v-for="mascota in filtroMascotas">
          			<td hidden="">@{{mascota.id_mascota}}</td>
          			<td>@{{mascota.nombre}}</td>
          			<td>@{{mascota.edad}}</td>
