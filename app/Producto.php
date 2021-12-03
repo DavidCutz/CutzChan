@@ -16,7 +16,7 @@ public $timetamps=false;
 protected $fillable=[
 'sku',
 'nombre',
-'precio_venta',
+'precio',
 'cantidad'
 
 ];

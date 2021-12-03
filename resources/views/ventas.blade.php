@@ -26,7 +26,8 @@
     
   </div>
   
-
+<div class="card">
+  <div class="card-body">
   <div class="row">
     <div class="col-md-12">
       <table class="table table-bordered" >
@@ -44,15 +45,55 @@
           <td>@{{venta.nombre}}</td>
           <td>@{{venta.precio}}</td>
           <td><input type="number" v-model.number="cantidades[index]" min="1"></td>
-          <td>@{{venta.total}}</td>
+          <td>@{{totalProducto(index)}}</td>
         </tr>
       </tbody>
 
       </table>
       @{{cantidades}}
+      @{{ventas}}
     </div>
-  </div>
-  
+  </div> <!--fin de row-->
+</div> <!--fin de card body-->  
+  </div> <!--fin de card-->
+
+
+<div class="row">
+  <!--espacio vacio -->
+  <div class="col-md-8"></div>
+
+<div class="col-md-4">
+  <div class="card">
+    <div class="card-body">
+  <!-- tabla -->
+    <table class="table table-bordered">
+      <tr>
+        <th style="background: #D5DBDB">Subtotal</th> <!--#D5DBDB es el color gris -->
+        <td>$@{{subTotal}}</td>
+      </tr>
+
+      <tr>
+        <th style="background: #D5DBDB ">IVA</th>
+        <td>$@{{iva}}</td>
+      </tr>
+
+      <tr>
+        <th style="background: #D5DBDB">Total</th>
+        <td>$@{{granTotal}}</td>
+      </tr>
+
+       <tr>
+        <th style="background: #D5DBDB">Articulos</th>
+        <td>$@{{noArticulos}}</td>
+      </tr>
+      
+    </table>
+  </div> <!--fin de card body -->
+</div> <!--fin de card-->
+</div> <!--fin de col-md-4-->
+</div>  <!--fin de row-->
+
+
 
 </div>
 
